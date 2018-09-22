@@ -235,11 +235,11 @@ section {
 }
 
 p {
-  font-size 24px;
+  font-size :24px;
 }
 
 i {
-  color: #028bde
+  color: #028bde;
 }
 
 .social-icon {

@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>VERIFICATION CALL</h1>
+        <button @click="confirm()">confirm</button>
         <router-link :to="{name:'dashboard'}">dashboard</router-link>
     </div>
 </template>
@@ -14,8 +15,17 @@ export default {
     return {};
   },
   methods: {
-    confirm(){
-
+    confirm() {
+      let ref = db.collection("users").doc(firebase.auth().currentUser.uid);
+      ref
+        .update({
+          verified: true
+        })
+        .then(() => {
+          this.$router.push({
+            name: "dashboard"
+          });
+        });
     }
   }
 };

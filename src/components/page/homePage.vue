@@ -1,34 +1,35 @@
 <template>
   <div>
     <header id="main-page">
-      <a><h1 id="company-name"><strong>We & You</strong></h1></a>
+      <a href="index.html"><h1 id="main-page-company-name"><strong>We & You</strong></h1></a>
+
       <div id="main-page-nav-bar">
         <ul>
-          <li><router-link class="non-btn"  :to="{name:'donate'}">Donate</router-link></li>
-          <li><a class="non-btn" @click="login">Login</a></li>
-          <li><router-link class="non-btn" :to="{name:'about'}">About Us</router-link></li>
-          <li><router-link class="non-btn" :to="{name:'homePage'}">Homepage</router-link></li>
+          <li><a class="non-btn" href="#">Sign In</a></li>
+          <li><a class="non-btn" href="html/donate.html">Donate</a></li>
+          <li><a class="non-btn" href="html/volunteer.html">Volunteer</a></li>
+          <li><a class="non-btn" href="html/about.html">About Us</a></li>
+          <li><a class="non-btn" href="index.html">Homepage</a></li>
         </ul>
       </div>
 
       <div id="main-page-text-box">
         <h1><strong>No More #WaitingInLine</strong><br>for hotlines</h1>
-        <router-link id="call-now-button" class="btn btn-full" :to="{name:'callRequest'}">Call Now</router-link>
-        <router-link class="btn btn-empty" :to="{name:'volunteerSignup'}">Volunteer</router-link>
+        <a class="btn btn-full" href="#">Call Now</a>
+        <a class="btn btn-empty" href="html/form.html">Volunteer</a>
       </div>
     </header>
 
     <footer>
       <div id="footer-links">
-        <h3 class="footer-info"><router-link class="non-btn" :to="{name:'homePage'}">Homepage</router-link></h3>
-        <h3 class="footer-info"><router-link class="non-btn" :to="{name:'about'}">About Us</router-link></h3>
-        <h3 class="footer-info"><router-link class="non-btn" :to="{name:'volunteerSignup'}">Volunteer</router-link></h3>
-        <h3 class="footer-info"><router-link class="non-btn" :to="{name:'donate'}">Donate</router-link></h3>
+        <h3 class="footer-info"><a class="non-btn" href="index.html">Homepage</a></h3>
+        <h3 class="footer-info"><a class="non-btn" href="html/about.html">About Us</a></h3>
+        <h3 class="footer-info"><a class="non-btn" href="html/volunteer.html">Volunteer</a></h3>
+        <h3 class="footer-info"><a class="non-btn" href="html/donate.html">Donate</a></h3>
         <h3 class="footer-info">BaseHacks Hackathon Team 8</h3>
       </div>
       <h3 id="copyright">&copy; We & You</h3>
     </footer>
-
   </div>
 </template>
 
