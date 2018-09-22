@@ -69,6 +69,78 @@
 }
 
 /* =========================================================================== */
+/*  Form                                                                       */
+/* =========================================================================== */
+#form {
+  height: 300px;
+}
+
+.span-one-of-three {
+  float: left;
+  text-align: right;
+  width: 25%;
+  margin-right: 5%;
+}
+
+.span-two-of-three {
+  float: right;
+  width: 60%;
+  margin-right: 10%;
+}
+
+input[type=number],
+select,
+textarea {
+  width: 500px;
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  font-size: 80%;
+
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+}
+
+select {
+  width: 523px;
+
+  color: #777777;
+}
+
+textarea {
+  width: 500px;
+  height: 100px;
+
+  font-family: 'Lato';
+}
+
+#age-label {
+  padding-top: 5px;
+}
+
+#language-label {
+  padding-top: 20px;
+}
+
+input[type="submit"]:not(hover) {
+  float: right;
+  margin-right: 100px;
+  font-size: 125%;
+  padding: 8px 60px;
+
+  color: #ffffff;
+  border-radius: 200px;
+  background-color: #6c6c6c;
+  border: 1px solid #6c6c6c;
+  transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: #028bde;
+  transition: background-color 0.2s;
+}
+
+/* =========================================================================== */
 /*  Footer                                                                     */
 /* =========================================================================== */
 footer {
