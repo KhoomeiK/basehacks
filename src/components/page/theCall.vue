@@ -20,11 +20,12 @@ export default {
         console.log("AgoraRTC client init failed", err);
       }
     );
+    
     client.join(
       // join to channel
       null,
       "testChannel",
-      "caller",
+      1,
       uid => {
         console.log("User " + uid + " join channel successfully");
       },
@@ -32,10 +33,11 @@ export default {
         console.log("Join channel failed", err);
       }
     );
-    localStream = AgoraRTC.createStream({
+
+    let localStream = AgoraRTC.createStream({
       // create video/audio stream
-      streamID: uid,
-      audio: true,
+      streamID: 1,
+      audio: false,
       video: true,
       screen: false
     });
@@ -76,6 +78,26 @@ export default {
       var remoteStream = evt.stream;
       console.log("Subscribe remote stream successfully: " + stream.getId());
       stream.play("agora_remote" + stream.getId());
+    });
+
+    localStream.init(
+      // play local stream on DOM
+      () => {
+        console.log("getUserMedia successfully");
+        // Use agora_local as ID of the dom element
+        localStream.play("agora_local");
+      },
+      err => {
+        console.log("getUserMedia failed", err);
+      }
+    );
+
+    client.on("stream-subscribed", evt => {
+      // play remote stream on DOM
+      var remoteStream = evt.stream;
+      console.log("Subscribe remote stream successfully: " + stream.getId());
+      // Use agora_remote + stream.getId() as the ID of the dom element
+      remoteStream.play("agora_remote" + stream.getId());
     });
 
     return {};
