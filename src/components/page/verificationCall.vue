@@ -6,10 +6,17 @@
 </template>
 
 <script>
+import firebase from "firebase";
+let db = firebase.firestore();
 export default {
-  name: "verification call",
+  name: "verificationCall",
   data() {
     return {};
+  },
+  methods: {
+    confirm(){
+
+    }
   }
 };
 </script>

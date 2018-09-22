@@ -13,8 +13,8 @@
 
       <div id="main-page-text-box">
         <h1><strong>No More #WaitingInLine</strong><br>for hotlines</h1>
-        <a id="call-now-button" class="btn btn-full" href="#">Call Now</a>
-        <a class="btn btn-empty" href="#">Volunteer</a>
+        <router-link id="call-now-button" class="btn btn-full" :to="{name:'callRequest'}">Call Now</router-link>
+        <router-link class="btn btn-empty" :to="{name:'volunteerSignup'}">Volunteer</router-link>
       </div>
     </header>
 
@@ -50,12 +50,12 @@ export default {
           console.log(res.user);
           let ref = db.collection("users").doc(res.user.uid);
           ref.get().then(res => {
-            if (res.data().verified) {
+            if (!res.exists) {
+              this.$router.push({ name: "volunteerSignup" });
+            } else if (res.data().verified) {
               this.$router.push({ name: "dashboard" });
             } else if (res.exists) {
               this.$router.push({ name: "tutorial" });
-            } else {
-              this.$router.push({ name: "volunteerSignup" });
             }
           });
           console.log(ref);
