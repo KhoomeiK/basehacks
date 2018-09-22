@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import firebase from '@/firebase/init.js'
 export default {
   name: 'App'
 }
