@@ -1,15 +1,17 @@
+/* =========================================================================== */
+/*  Main Page                                                                  */
+/* =========================================================================== */
 #main-page-text-box {
   padding-top: 250px;
   text-align: center;
   font-size: 100%;
 }
 
-#company-name {
+#main-page-company-name {
   padding-top: 50px;
   margin-left: 75px;
   float: left;
   font-size: 20px;
-  text-decoration: underline;
 }
 
 #main-page-nav-bar {
@@ -23,11 +25,54 @@
   list-style: none;
 }
 
+#not-main-page-company-name {
+  padding-top: 20px;
+  margin-left: 75px;
+  float: left;
+  font-size: 20px;
+}
+
+#not-main-page-nav-bar {
+  margin-left: 75px;
+}
+
+#not-main-page-nav-bar li {
+  padding-top: 20px;
+  margin-right: 75px;
+  float: right;
+  list-style: none;
+}
+
+/* =========================================================================== */
+/*  About                                                                      */
+/* =========================================================================== */
+#about-us {
+  height: 1800px;
+}
+
+/* =========================================================================== */
+/*  Volunteer                                                                  */
+/* =========================================================================== */
+#volunteer p {
+  margin-bottom: 50px;
+}
+
+/* =========================================================================== */
+/*  Donate                                                                     */
+/* =========================================================================== */
+#donate {
+  height: 400px;
+}
+
+#donate p {
+  margin-bottom: 50px;
+}
+
 /* =========================================================================== */
 /*  Footer                                                                     */
 /* =========================================================================== */
 footer {
-  height: 250px;
+  height: 200px;
 
   color: #ffffff;
 }
@@ -47,6 +92,7 @@ footer {
   margin-left: 50px;
   margin-top: 20px;
 }
+
 
 
 
@@ -75,9 +121,7 @@ html {
 /* =========================================================================== */
 
 h1,
-h2,
-h3,
-h4 {
+h2 {
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -108,7 +152,30 @@ h2:after {
 
   content: " ";
   display: block;
-  background-color: #585858;
+  background-color: #028bde;
+}
+
+section {
+  width: 80%;
+  padding: 100px 10%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+p {
+  font-size 24px;
+}
+
+i {
+  color: #028bde
+}
+
+.social-icon {
+  font-size: 300%;
+}
+
+.block {
+  margin-bottom: 200px;
 }
 
 /* =========================================================================== */
@@ -135,7 +202,7 @@ h2:after {
 .btn-full:hover,
 .btn-full:active {
   color: #ffffff;
-  background-color: #585858;
+  background-color: #028bde;
   transition: color 0.2s, background-color 0.2s;
 }
 
@@ -150,8 +217,8 @@ h2:after {
 .btn-empty:hover,
 .btn-empty:active {
   color: #ffffff;
-  border: 1px solid #585858;
-  background-color: #585858;
+  border: 1px solid #028bde;
+  background-color: #028bde;
   transition: color 0.2s, border 0.2s, background-color 0.2s;
 }
 /* =========================================================================== */
@@ -169,7 +236,7 @@ h2:after {
 
 .non-btn:hover,
 .non-btn:active {
-  border-bottom: 2px solid #6c6c6c;
+  border-bottom: 2px solid #028bde;
   transition: border-bottom 0.2s;
 }
 
@@ -177,10 +244,18 @@ h2:after {
 /* Header                                                                      */
 /* =========================================================================== */
 
-header {
+#main-page {
   height: 100vh;
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/backgrounds/main-background.jpg");
+}
+
+#not-main-page {
+  height: 10vh;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-image: url("../images/backgrounds/Background.jpg");
 }
