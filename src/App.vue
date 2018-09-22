@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link rel="stylesheet" href="./src/assets/css/main.css">
     <router-view/>
   </div>
 </template>
@@ -12,4 +13,192 @@ export default {
 </script>
 
 <style>
+#main-page-text-box {
+    padding-top: 250px;
+    text-align: center;
+    font-size: 100%;
+  }
+  
+  #company-name {
+    padding-top: 50px;
+    margin-left: 75px;
+    float: left;
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  
+  #main-page-nav-bar {
+    margin-left: 75px;
+  }
+  
+  #main-page-nav-bar li {
+    padding-top: 50px;
+    margin-right: 75px;
+    float: right;
+    list-style: none;
+  }
+  
+  /* =========================================================================== */
+  /*  Footer                                                                     */
+  /* =========================================================================== */
+  footer {
+    height: 250px;
+  
+    color: #ffffff;
+  }
+  
+  #copyright {
+    padding-top: 100px;
+    margin-bottom: 20px;
+    padding-left: 700px;
+  }
+  
+  #footer-links {
+    float: left;
+  }
+  
+  .footer-info {
+    font-size: 70%;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+  
+  
+  
+  
+  
+  /* =========================================================================== */
+  /* HTML                                                                        */
+  /* =========================================================================== */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    color: #777777;
+    font-size: 20px;
+    font-weight: 300;
+    overflow-x: hidden;
+    background-color: #000000;
+    text-rendering: optimizeLegibility;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+  
+  /* =========================================================================== */
+  /* Reusable                                                                    */
+  /* =========================================================================== */
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  
+  h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 300%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+  
+    color: #ffffff;
+  }
+  
+  h2 {
+    font-size: 200%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+  
+    text-align: center;
+    color: #2d2d2d;
+  }
+  
+  h2:after {
+    height: 3px;
+    width: 100px;
+    margin: 30px auto 60px auto;
+  
+    content: " ";
+    display: block;
+    background-color: #585858;
+  }
+  
+  /* =========================================================================== */
+  /* Buttons                                                                     */
+  /* =========================================================================== */
+  .btn {
+    font-weight: 300;
+    padding: 10px 40px;
+    border-radius: 200px;
+  
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff;
+  }
+  
+  .btn-full:link,
+  .btn-full:visited {
+    margin-right: 15px;
+    color: #ffffff;
+    background-color: #6c6c6c;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  
+  .btn-full:hover,
+  .btn-full:active {
+    color: #ffffff;
+    background-color: #585858;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  
+  .btn-empty:link,
+  .btn-empty:visited {
+    color: #ffffff;
+    border: 1px solid #6c6c6c;
+    background-color: transparent;
+    transition: color 0.2s, border 0.2s, background-color 0.2s;
+  }
+  
+  .btn-empty:hover,
+  .btn-empty:active {
+    color: #ffffff;
+    border: 1px solid #585858;
+    background-color: #585858;
+    transition: color 0.2s, border 0.2s, background-color 0.2s;
+  }
+  /* =========================================================================== */
+  /* Links                                                                       */
+  /* =========================================================================== */
+  .non-btn:link,
+  .non-btn:visited {
+    padding: 8px 0px;
+  
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+  }
+  
+  .non-btn:hover,
+  .non-btn:active {
+    border-bottom: 2px solid #6c6c6c;
+    transition: border-bottom 0.2s;
+  }
+  
+  /* =========================================================================== */
+  /* Header                                                                      */
+  /* =========================================================================== */
+  
+  header {
+    height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/images/main-background.jpg");
+  }
+  
 </style>
+
