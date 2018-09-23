@@ -155,14 +155,14 @@ input[type="submit"]:not(hover) {
 
   color: #ffffff;
   border-radius: 200px;
-  background-color: #6c6c6c;
-  border: 1px solid #6c6c6c;
+  /* background-color: #6c6c6c;
+  border: 1px solid #6c6c6c; */
   transition: background-color 0.2s;
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:active {
-  background-color: #028bde;
+  /* background-color: #028bde; */
   transition: background-color 0.2s;
 }
 
@@ -553,14 +553,14 @@ input:checked + .slider:before {
 .btn-full {
   margin-right: 15px;
   color: #ffffff;
-  background-color: #6c6c6c;
+  background-color: #028bde;
   transition: color 0.2s, background-color 0.2s;
 }
 
 .btn-full:hover,
 .btn-full:active {
   color: #ffffff;
-  background-color: #028bde;
+  background-color: #036daf;
   transition: color 0.2s, background-color 0.2s;
 }
 
@@ -575,8 +575,7 @@ input:checked + .slider:before {
 .btn-empty:hover,
 .btn-empty:active {
   color: #ffffff;
-  border: 1px solid #028bde;
-  background-color: #028bde;
+  background-color: #6c6c6c;
   transition: color 0.2s, border 0.2s, background-color 0.2s;
 }
 /* =========================================================================== */
