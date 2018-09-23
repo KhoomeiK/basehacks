@@ -143,6 +143,9 @@ export default {
           remoteStream.play("agora_remote");
         });
       }
+      else {
+        console.log("not ready");
+      }
     },
     setRead(val) {
       let ref = db.collection("users").doc(firebase.auth().currentUser.uid);
