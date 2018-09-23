@@ -2,7 +2,7 @@
     <div>
       <h1>THE CALL</h1>
       <div id="agora_local"> </div>
-      <!-- <div id="agora_remote"> </div> -->
+      <div id="agora_remote"> </div>
       <router-link :to="{name:'rate'}">Rate</router-link>
     </div>
 </template>
@@ -57,34 +57,34 @@ export default {
       }
     );
 
-    // console.log("about to publish");
-    // client.publish(localStream, function(err) {
-    //   // publish stream to channel
-    //   console.log("Publish local stream error: " + err);
-    // });
-    // console.log("published");
+    console.log("about to publish");
+    client.publish(localStream, function(err) {
+      // publish stream to channel
+      console.log("Publish local stream error: " + err);
+    });
+    console.log("published");
 
-    // client.on("stream-published", function(evt) {
-    //   // occurs after stream publishes
-    //   console.log("Published local stream successfully");
-    // });
+    client.on("stream-published", function(evt) {
+      // occurs after stream publishes
+      console.log("Published local stream successfully");
+    });
 
-    // client.on("stream-added", function(evt) {
-    //   // subscribes to stream when new stream added to channel
-    //   var stream = evt.stream;
-    //   console.log("New stream added: " + stream.getId());
+    client.on("stream-added", function(evt) {
+      // subscribes to stream when new stream added to channel
+      var stream = evt.stream;
+      console.log("New stream added: " + stream.getId());
 
-    //   client.subscribe(stream, function(err) {
-    //     console.log("Subscribe stream failed", err);
-    //   });
-    // });
+      client.subscribe(stream, function(err) {
+        console.log("Subscribe stream failed", err);
+      });
+    });
 
-    // client.on("stream-subscribed", function(evt) {
-    //   // plays stream once subscribed
-    //   var remoteStream = evt.stream;
-    //   console.log("Subscribe remote stream successfully: " + stream.getId());
-    //   stream.play("agora_remote" + stream.getId());
-    // });
+    client.on("stream-subscribed", function(evt) {
+      // plays stream once subscribed
+      var remoteStream = evt.stream;
+      console.log("Subscribe remote stream successfully: " + stream.getId());
+      stream.play("agora_remote");
+    });
   },
   data() {
     return {};
@@ -94,6 +94,11 @@ export default {
 
 <style>
 #player_1 {
+  position: absolute !important;
+  width: 50% !important;
+  height: 50% !important;
+}
+#player_2 {
   position: absolute !important;
   width: 50% !important;
   height: 50% !important;
