@@ -24,7 +24,7 @@
         <p id="right"><span v-if="!ready">Not</span> Ready</p>
       </div>
       <div class="rect">
-        <div class="video-container">
+        <div class="video-container" v-if="ready">
           <div id="agora_remote" class="video"> </div>
           <div id="agora_local" class="video"> </div>
         </div>
