@@ -1,6 +1,6 @@
 <template>
     <div><header id="not-main-page">
-      <a href="../index.html"><h1 id="not-main-page-company-name"><strong>We & You</strong></h1></a>
+      <router-link :to="{name:'homePage'}"><h1 id="not-main-page-company-name"><strong>We & You</strong></h1></router-link>
 
       <div id="not-main-page-nav-bar">
         <headerlinks/>
@@ -59,6 +59,11 @@ export default {
         next();
       });
     } else next();
+  },
+  created() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user.email) this.setRead(false);
+    });
   },
   components: {
     footerlinks,
