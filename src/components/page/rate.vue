@@ -11,25 +11,22 @@
       <h2>How would you rate your service?</h2>
       <form>
         <div id="rate-form">
-         <span>
-           <label class="container">I feel better.
-           <input type="radio" name="radio" required value=1 v-model="feeling">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container">I feel the same.
-           <input type="radio" name="radio" value=0 v-model="feeling">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container">I feel worse.
-           <input type="radio" name="radio" value=-1 v-model="feeling">
-           <span class="checkmark"></span>
-         </label>
-       </span>
+          <span>
+            <label class="container">I feel better.
+            <input type="radio" name="radio" required value=1 v-model="feeling">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">I feel the same.
+            <input type="radio" name="radio" value=0 v-model="feeling">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">I feel worse.
+            <input type="radio" name="radio" value=-1 v-model="feeling">
+            <span class="checkmark"></span>
+          </label>
+        </span>
         </div>
-        <br><br>
-        <div id="message-label" class="span-one-of-three"><label for="message">Message</label></div>
         <div class="span-two-of-three"><textarea id="message" name="message" placeholder="Message" required v-model="comment"></textarea></div>
-        <br><br>
         <div class="span-two-of-three"><a class="btn btn-full" @click="submit()">Submit</a></div>
       </form>
     </section>
@@ -88,4 +85,7 @@ export default {
 </script>
 
 <style>
+form{
+  display: inline-block;
+}
 </style>

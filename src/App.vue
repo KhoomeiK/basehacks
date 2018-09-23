@@ -351,7 +351,7 @@ input[type="submit"]:active {
 }
 
 #rate-form {
-  margin-left: 470px;
+  margin-left: 40%;
 }
 
 #message-label {
