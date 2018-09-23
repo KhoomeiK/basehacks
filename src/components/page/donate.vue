@@ -15,7 +15,7 @@
         <p>Your donations help fund our efforts to make the world a better place.<br>They also go toward keeping our servers running and our workers happy. ☺</p>
         <form name="PrePage" method = "post" action = "https://scotest.authorize.net/payment/CatalogPayment.aspx">
           <input type = "hidden" name = "LinkId" value ="c7be13f9-88fd-4ede-88ce-acf824b5b83b" />
-          <input id="donate-button" type = "submit" value = "Donate" class="btn"/> 
+          <input id="donate-button" type = "submit" value = "Donate" class="btn btn-full"/> 
         </form>
       </div>
     </section>
