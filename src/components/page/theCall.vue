@@ -1,8 +1,14 @@
 <template>
     <div>
       <h1>THE CALL</h1>
-      <div id="agora_local"> </div>
-      <div id="agora_remote"> </div>
+      <row>
+        <col> 
+          <div id="agora_local" style="float: left"> </div>
+        </col>
+        <col> 
+          <div id="agora_remote"> </div>
+        </col>
+      </row>
       <router-link :to="{name:'rate'}">Rate</router-link>
     </div>
 </template>
@@ -79,8 +85,10 @@ export default {
     client.on("stream-subscribed", function(evt) {
       // plays stream once subscribed
       var remoteStream = evt.stream;
-      console.log("Subscribe remote stream successfully: " + stream.getId());
-      stream.play("agora_remote");
+      console.log(
+        "Subscribe remote stream successfully: " + remoteStream.getId()
+      );
+      remoteStream.play("agora_remote");
     });
   },
   data() {
