@@ -1,5 +1,6 @@
 <template>
-    <div><header id="not-main-page">
+    <div v-if="mydata">
+      <header id="not-main-page">
       <router-link :to="{name:'homePage'}"><h1 id="not-main-page-company-name"><strong>We & You</strong></h1></router-link>
 
       <div id="not-main-page-nav-bar">
@@ -8,9 +9,13 @@
 
     </header>
 
-    <section id="dashboard">
-      <h2>Elliot Ha's Dashboard</h2>
-      <p id="middle">You've made 172 lives better!</p>
+    <section id="dashboard" >
+      <h2>{{mydata.firstName}} {{mydata.lastName}} Dashboard</h2>
+      <p id="middle">
+        <span v-if="mydata.calls>1">You've made {{mydata.calls}} lives better!</span>
+        <span v-if="mydata.calls==1">You've a life better!</span>
+        <span v-if="mydata.calls==0">Let's make someones day better.</span>
+      </p>
       <div id="switch">
       <label class="switch">
         <input type="checkbox" @click="toggleReady()">
