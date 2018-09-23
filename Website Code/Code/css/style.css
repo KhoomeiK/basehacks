@@ -300,6 +300,10 @@ input[type="submit"]:active {
   width: 96%;
   height: 600px;
   background-color: #eeeeee;
+  background-size: cover;
+  background-position:center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url("../images/backgrounds/video-call.png");
+
 }
 
 /* =========================================================================== */
