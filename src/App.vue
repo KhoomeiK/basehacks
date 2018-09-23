@@ -103,7 +103,7 @@ export default {
   margin-right: 10%;
 }
 
-input[type="number"],
+input[type=number],
 select,
 textarea {
   width: 500px;
@@ -125,7 +125,7 @@ textarea {
   width: 500px;
   height: 100px;
 
-  font-family: "Lato";
+  font-family: 'Lato';
 }
 
 #age-label {
@@ -156,6 +156,26 @@ input[type="submit"]:active {
 }
 
 /* =========================================================================== */
+/*  Education                                                                  */
+/* =========================================================================== */
+#education {
+  height: 2000px;
+}
+
+#education li {
+  margin-bottom: 50px;
+  list-style: none;
+  text-align: left;
+}
+
+#education p {
+  margin-bottom: 50px;
+}
+
+#education .non-btn {
+  color: #000000;
+}
+/* =========================================================================== */
 /*  Footer                                                                     */
 /* =========================================================================== */
 footer {
@@ -179,6 +199,12 @@ footer {
   margin-left: 50px;
   margin-top: 20px;
 }
+
+
+
+
+
+
 /* =========================================================================== */
 /* HTML                                                                        */
 /* =========================================================================== */
@@ -194,7 +220,7 @@ html {
   overflow-x: hidden;
   background-color: #000000;
   text-rendering: optimizeLegibility;
-  font-family: "Lato", "Arial", sans-serif;
+  font-family: 'Lato', 'Arial', sans-serif;
 }
 
 /* =========================================================================== */
@@ -247,12 +273,9 @@ p {
   font-size: 24px;
 }
 
-i {
-  color: #028bde;
-}
-
-.social-icon {
+ion-icon {
   font-size: 300%;
+  color: #028bde;
 }
 
 .block {
@@ -330,16 +353,13 @@ i {
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./assets/images/main-background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/images/main-background.jpg");
 }
 
 #not-main-page {
   height: 10vh;
-  background-size: cover;
-  background-position: bottom;
-  background-attachment: fixed;
-  background-image: url("./assets/images/main-background.jpg");
+  background: black;
 }
+
 </style>
 
