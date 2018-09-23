@@ -1,18 +1,60 @@
 <template>
-    <div>
-        <h1>CALL REQUEST</h1>
-        <router-link :to="{name:'theCall', params:{id}}">Call Request</router-link>
+    <div><header id="not-main-page">
+      <router-link :to="{name:'homePage'}"><h1 id="not-main-page-company-name"><strong>We & You</strong></h1></router-link>
+
+      <div id="not-main-page-nav-bar">
+        <headerlinks/>
+      </div>
+
+    </header>
+
+    <section id="callrequest">
+      <h2>Call Request</h2>
+      <form>
+        <div id="age-label" class="span-one-of-three"><label for="age">Age</label></div>
+        <div class="span-two-of-three">
+          <select id="number" name="age" required>
+            <option value="under">Under 18</option>
+            <option value="over">18+</option>
+          </select>
+        </div>
+        <br><br>
+
+        <div id="language-label" class="span-one-of-three"><label for="language">Language</label></div>
+        <div class="span-two-of-three">
+          <select id="language" name="language" required>
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+          </select>
+        </div>
+        <br><br>
+
+        <div class="span-two-of-three">
+          <a class="btn btn-full" @click="redirect()">Call</a>
+        </div>
+      </form>
+      <h2>Information</h2>
+      <p>After filling out the form above, you will be connected to a counselor through a video call shortly. They will listen to you, understand how your problem is affecting you, provide support, and share resources that may be helpful.</p>
+    </section>
+
+    <footerlinks/>
     </div>
 </template>
 
 <script>
+import footerlinks from "@/components/misc/footerlinks";
+import headerlinks from "@/components/misc/headerlinks";
 import firebase from "firebase";
 let db = firebase.firestore().collection("users");
 export default {
   name: "callRequest",
   async created() {
     // determine id on request call click
-    let vols = await db.where("ready", "==", true).where("verified", "==", true).get();
+    let vols = await db
+      .where("ready", "==", true)
+      .where("verified", "==", true)
+      .get();
     let id = vols.docs[0].id;
     this.id = id;
     console.log(this.id);
@@ -21,6 +63,18 @@ export default {
     return {
       id: null
     };
+  },
+  methods: {
+    redirect() {
+      this.$router.push({
+        name: "theCall",
+        params: { id: this.id }
+      });
+    }
+  },
+  components: {
+    footerlinks,
+    headerlinks
   }
 };
 </script>
