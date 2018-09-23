@@ -58,6 +58,8 @@ export default {
 
       let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
       let stream = "";
+      let localStream = "";
+
       if (this.ready) {
         console.log("ready!");
         await client.init(
@@ -84,7 +86,7 @@ export default {
           }
         );
 
-        let localStream = AgoraRTC.createStream({
+        localStream = AgoraRTC.createStream({
           // create video/audio stream
           streamID: 1,
           audio: true,

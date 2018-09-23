@@ -4,21 +4,42 @@
       <h2>Call in Progress</h2>
         <div class="rect">
           <div class="video-container">
-            <div id="agora_remote" class="video"></div>
+            <div id="agora_remote" class="video" v-if="!quit"></div>
             <div id="agora_local" class="video"></div>
           </div>
         </div>
-        <router-link :to="{name:'rate', params:{id}}">Rate</router-link>
+        <router-link :to="{name:'rate', params:{id}}">Leave</router-link>
       </section>
     </div>
 </template>
 
 <script>
+import firebase from "firebase";
+import router from "../../router/index";
+let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
+let stream = "";
+let localStream = "";
 export default {
   name: "theCall",
   async created() {
     console.log(this.id);
-    let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
+    let id = this.id;
+    let doc = firebase
+      .firestore()
+      .collection("users")
+      .doc(id)
+      .onSnapshot(function(next) {
+        console.log(next.data().ready);
+        console.log(id);
+        if (!next.data().ready) {
+          this.quit = true;
+          router.push({
+            name: "rate",
+            params: { id }
+          });
+        }
+      });
+
     await client.init(
       // initialize Agora
       "2fdcc95bd67a45e996a0349e87bf0654",
@@ -43,7 +64,7 @@ export default {
       }
     );
 
-    let localStream = AgoraRTC.createStream({
+    localStream = AgoraRTC.createStream({
       // create video/audio stream
       streamID: 1,
       audio: true,
@@ -75,7 +96,7 @@ export default {
 
     client.on("stream-added", function(evt) {
       // subscribes to stream when new stream added to channel
-      var stream = evt.stream;
+      stream = evt.stream;
       console.log("New stream added: " + stream.getId());
 
       client.subscribe(stream, function(err) {
@@ -92,9 +113,28 @@ export default {
       remoteStream.play("agora_remote");
     });
   },
+  beforeRouteLeave(to, from, next) {
+    console.log("quitting");
+    client.unpublish(localStream, function(err) {
+      console.log("stream unpublished");
+    });
+    client.unsubscribe(stream, function(err) {
+      console.log("stream unsubscribed");
+    });
+    client.leave(
+      function() {
+        console.log("Left channel successfully");
+        next();
+      },
+      function(err) {
+        console.log("Leave channel failed");
+      }
+    );
+  },
   data() {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      quit: false
     };
   }
 };
@@ -123,7 +163,7 @@ video {
 #agora_remote div {
   max-height: 600px;
 }
-#agora_remote{
+#agora_remote {
   min-height: 600px;
 }
 #switch label {
