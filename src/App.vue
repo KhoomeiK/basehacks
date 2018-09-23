@@ -607,8 +607,8 @@ input:checked + .slider:before {
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./assets/images/main-background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url("https://financialtribune.com/sites/default/files/field/image/17january/12_mental_2.jpg");
 }
 
 #not-main-page {
