@@ -29,7 +29,7 @@
         <div id="agora_remote" class="video"> </div>
       </div>
     </div>
-      <p id="quote" v-if="!ready">"Motivational Quote BTW"</p>
+      <p id="quote" v-if="!ready">Make someones day.</p>
       <h2>Comments</h2>
       <p>"OMG! Elliot Ha has helped me overcome depression and cancer and now I'm a billionaire!"</p>
       <br><br><br>
