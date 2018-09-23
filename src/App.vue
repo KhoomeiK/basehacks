@@ -260,6 +260,56 @@ input[type="submit"]:active {
   border-radius: 50%;
   background: white;
 }
+
+/* =========================================================================== */
+/*  Dashboard                                                                  */
+/* =========================================================================== */
+#dashboard {
+  height: 100%;
+  width: 100%;
+  padding: 100px 0px;
+}
+
+#middle {
+  float: left;
+  margin-left: 30px;
+}
+
+#right {
+  float: right;
+  margin-right: 10px;
+}
+
+#quote {
+  font-size: 36px;
+  margin-top: -500px;
+  margin-bottom: 500px;
+}
+
+#call:not(hover) {
+  border: 2px solid #2c2c2c;
+  border-radius: 10px;
+  font-size: 500%;
+  transition: background-color 0.2s;
+}
+
+#call:hover {
+  background-color: #7d7;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#dashboard .rect {
+  margin: 100px 2%;
+  border: 2px solid #000000;
+}
+
+.rect {
+  width: 96%;
+  height: 600px;
+  background-color: #eeeeee;
+}
+
 /* =========================================================================== */
 /*  Footer                                                                     */
 /* =========================================================================== */
@@ -367,6 +417,68 @@ ion-icon {
   margin-bottom: 200px;
 }
 
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  float: right;
+  margin-right: 30px;
+  margin-top: -3px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b50000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #3abf0a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3abf0a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 /* =========================================================================== */
 /* Buttons                                                                     */
 /* =========================================================================== */
@@ -378,6 +490,7 @@ ion-icon {
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .btn-full {
@@ -444,6 +557,5 @@ ion-icon {
   height: 10vh;
   background:black;
 }
-
 </style>
 
