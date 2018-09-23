@@ -1,7 +1,7 @@
 <template>
     <div>
       <header id="not-main-page">
-      <a href="../index.html"><h1 id="not-main-page-company-name"><strong>We & You</strong></h1></a>
+      <router-link :to="{name:'homePage'}"><h1 id="not-main-page-company-name"><strong>We & You</strong></h1></router-link>
 
       <div id="not-main-page-nav-bar">
         <headerlinks/>
@@ -13,7 +13,10 @@
         <ion-icon name="cash"></ion-icon>
         <h2>Donate To Our Cause</h2>
         <p>Your donations help fund our efforts to make the world a better place.<br>They also go toward keeping our servers running and our workers happy. ☺</p>
-        <a class="btn btn-full" href="#">Donate</a>
+        <form name="PrePage" method = "post" action = "https://scotest.authorize.net/payment/CatalogPayment.aspx">
+          <input type = "hidden" name = "LinkId" value ="c7be13f9-88fd-4ede-88ce-acf824b5b83b" />
+          <input id="donate-button" type = "submit" value = "Donate" class="btn"/> 
+        </form>
       </div>
     </section>
 

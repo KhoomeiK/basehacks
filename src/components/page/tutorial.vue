@@ -129,7 +129,7 @@
           </p>
         </div>
         <li>
-          <button class="btn btn-full" @click="exam=!exam">Take Exam</button>
+          <a class="btn btn-full" @click="exam=!exam">Take Exam</a>
         </li>
       </ul>
       <ul v-if="exam">
@@ -226,15 +226,4 @@ export default {
 </script>
 
 <style>
-.non-btn {
-  cursor: pointer;
-}
-.btn-full {
-  margin-right: 15px;
-  color: #ffffff;
-  background-color: #6c6c6c;
-  transition: color 0.2s, background-color 0.2s;
-  cursor: pointer;
-  outline: none;
-}
 </style>
