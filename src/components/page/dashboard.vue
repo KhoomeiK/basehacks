@@ -10,19 +10,23 @@
 
     <section id="dashboard">
       <h2>Elliot Ha's Dashboard</h2>
-      <p id="middle">You've helped 10,000 people!</p>
+      <p id="middle">You've made 172 lives better!</p>
       <div id="switch">
       <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" @click="toggleReady()">
         <span class="slider round"></span>
       </label>
-      <p id="right">Not Ready</p>
+      <p id="right"><span v-if="!ready">Not</span> Ready</p>
     </div>
       <div class="rect"></div>
       <p id="quote">"Motivational Quote BTW"</p>
       <h2>Comments</h2>
       <p>"OMG! Elliot Ha has helped me overcome depression and cancer and now I'm a billionaire!"</p>
-      <p>&mdash;Anonymous, 18</p>
+      <br><br><br>
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="ree">reee</a></li>
+      </ul>
     </section>
 
     <footerlinks/>
