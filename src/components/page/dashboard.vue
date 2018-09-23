@@ -16,19 +16,26 @@
         <span v-if="mydata.calls==1">You've a life better!</span>
         <span v-if="mydata.calls==0">Let's make someones day better.</span>
       </p>
+      <!-- <div id="switch">
+        <label class="switch">
+          <input type="checkbox" @click="toggleReady()">
+          <span class="slider round"></span>
+        </label>
+        <p id="right"><span v-if="!ready">Not</span> Ready</p>
+      </div> -->
       <div id="switch">
       <label class="switch">
-        <input type="checkbox" @click="toggleReady()">
+        <input type="checkbox">
         <span class="slider round"></span>
       </label>
-      <p id="right"><span v-if="!ready">Not</span> Ready</p>
+      <p id="right">Not Ready</p>
     </div>
-    <div class="rect">
-      <div class="video-container">
-        <div id="agora_remote" class="video"> </div>
-        <div id="agora_local" class="video"> </div>
+      <div class="rect">
+        <div class="video-container">
+          <div id="agora_remote" class="video"> </div>
+          <div id="agora_local" class="video"> </div>
+        </div>
       </div>
-    </div>
       <p id="quote" v-if="!ready">Make someones day.</p>
       <h2>Comments</h2>
       <p>"OMG! Elliot Ha has helped me overcome depression and cancer and now I'm a billionaire!"</p>

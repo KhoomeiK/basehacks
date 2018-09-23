@@ -338,7 +338,7 @@ footer {
 #copyright {
   padding-top: 100px;
   margin-bottom: 20px;
-  padding-left: 700px;
+  text-align: center;
 }
 
 #footer-links {
