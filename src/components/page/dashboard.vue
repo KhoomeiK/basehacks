@@ -29,9 +29,11 @@
           <div id="agora_local" class="video"> </div>
         </div>
       </div>
-      <p id="quote" v-if="!ready">Make someone's day.</p>
-      <h2>Comments</h2>
-      <!-- <p>"Wow... {{mydata.firstName}} really helped me overcome my social anxiety. Thank you!"</p> -->
+      <div v-if="mydata.comment">
+        <p id="quote" v-if="!ready">Make someone's day.</p>
+        <h2>Comment</h2>
+        <p>"{{mydata.comment}}"</p>
+      </div>
       <br><br><br>
     </section>
 

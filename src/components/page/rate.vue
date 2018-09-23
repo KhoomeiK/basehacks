@@ -57,6 +57,15 @@ export default {
           .then(res => {
             let points = res.data().points + point + parseInt(this.feeling);
             let calls = res.data().calls + 1;
+            if (point > 7) {
+              firebase
+                .firestore()
+                .collection("users")
+                .doc(this.id)
+                .update({
+                  comment: this.comment
+                });
+            }
             firebase
               .firestore()
               .collection("users")
@@ -85,7 +94,7 @@ export default {
 </script>
 
 <style>
-form{
+form {
   display: inline-block;
 }
 </style>
