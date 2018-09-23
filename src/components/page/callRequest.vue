@@ -13,7 +13,7 @@
       <form>
         <div id="age-label" class="span-one-of-three"><label for="age">Age</label></div>
         <div class="span-two-of-three">
-          <select id="number" name="age" required>
+          <select id="number" name="age" required v-model="age">
             <option value="under">Under 18</option>
             <option value="over">18+</option>
           </select>
@@ -22,7 +22,7 @@
 
         <div id="language-label" class="span-one-of-three"><label for="language">Language</label></div>
         <div class="span-two-of-three">
-          <select id="language" name="language" required>
+          <select id="language" name="language" required v-model="lang">
             <option value="english">English</option>
             <option value="spanish">Spanish</option>
             <option value="french">French</option>
@@ -51,25 +51,35 @@ export default {
   name: "callRequest",
   async created() {
     // determine id on request call click
-    let vols = await db
-      .where("ready", "==", true)
-      .where("verified", "==", true)
-      .get();
-    let id = vols.docs[0].id;
-    this.id = id;
-    console.log(this.id);
   },
   data() {
     return {
-      id: null
+      id: null,
+      lang: null,
+      age: null
     };
   },
   methods: {
     redirect() {
-      this.$router.push({
-        name: "theCall",
-        params: { id: this.id }
-      });
+      let magic = "";
+      if (this.age == "under") magic = "<";
+      else magic = ">=";
+      db
+        .where("ready", "==", true)
+        .where("verified", "==", true)
+        .where("language", "==", this.lang)
+        .where("age", magic, "18")
+        .get()
+        .then(vols => {
+          console.log(this.lang, this.age);
+          console.log(vols);
+          let id = vols.docs[0].id;
+          console.log(this.id);
+          this.$router.push({
+            name: "theCall",
+            params: { id }
+          });
+        });
     }
   },
   components: {
