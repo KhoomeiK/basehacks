@@ -174,21 +174,25 @@ input[type="submit"]:active {
   text-align: justify;
 }
 
-#education li {
+#education li,
+#notes li {
   margin-bottom: 50px;
   list-style: none;
   text-align: left;
 }
 
-#education p {
+#education p,
+#notes p {
   margin-bottom: 50px;
 }
 
-#education .non-btn {
+#education .non-btn,
+#notes .non-btn {
   color: #000000;
 }
 
-#education .list-bulleted li {
+#education .list-bulleted li,
+#notes .list-bulleted li {
   list-style: disc;
 }
 
@@ -582,10 +586,9 @@ input:checked + .slider:before {
 /* =========================================================================== */
 /* Links                                                                       */
 /* =========================================================================== */
-.non-btn:link,
-.non-btn:visited {
+.non-btn {
   padding: 8px 0px;
-
+  cursor: pointer;
   color: #ffffff;
   text-decoration: none;
   border-bottom: 2px solid transparent;

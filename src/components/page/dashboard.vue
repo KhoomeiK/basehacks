@@ -34,14 +34,14 @@
         <h2>Comment</h2>
         <p>"{{mydata.comment}}"</p>
       </div>
-      <br><br><br>
+      <notes/>
     </section>
-
     <footerlinks/>
     </div>
 </template>
 
 <script>
+import notes from "@/components/misc/notes";
 import footerlinks from "@/components/misc/footerlinks";
 import headerlinks from "@/components/misc/headerlinks";
 import firebase from "firebase";
@@ -183,7 +183,8 @@ export default {
   },
   components: {
     footerlinks,
-    headerlinks
+    headerlinks,
+    notes
   }
 };
 </script>
