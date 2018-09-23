@@ -83,11 +83,16 @@ export default {
   margin-bottom: 50px;
 }
 
+#donate-button {
+  outline: none;
+  margin-right: 510px;
+}
+
 /* =========================================================================== */
 /*  Form                                                                       */
 /* =========================================================================== */
-#form {
-  height: 300px;
+#contact-form {
+  margin-bottom: 300px;
 }
 
 .span-one-of-three {
@@ -103,7 +108,7 @@ export default {
   margin-right: 10%;
 }
 
-input[type=number],
+input[type="number"],
 select,
 textarea {
   width: 500px;
@@ -125,7 +130,7 @@ textarea {
   width: 500px;
   height: 100px;
 
-  font-family: 'Lato';
+  font-family: "Lato";
 }
 
 #age-label {
@@ -159,7 +164,8 @@ input[type="submit"]:active {
 /*  Education                                                                  */
 /* =========================================================================== */
 #education {
-  height: 2000px;
+  height: 100%;
+  text-align: justify;
 }
 
 #education li {
@@ -174,6 +180,29 @@ input[type="submit"]:active {
 
 #education .non-btn {
   color: #000000;
+}
+
+#education .list-bulleted li {
+  list-style: disc;
+}
+
+/* =========================================================================== */
+/*  Test                                                                       */
+/* =========================================================================== */
+#test {
+  text-align: left;
+}
+
+#test p {
+  margin-bottom: 10px;
+}
+
+#test span {
+  margin-left: 10px;
+}
+
+#test input {
+  margin-left: 50px;
 }
 /* =========================================================================== */
 /*  Footer                                                                     */
@@ -200,11 +229,6 @@ footer {
   margin-top: 20px;
 }
 
-
-
-
-
-
 /* =========================================================================== */
 /* HTML                                                                        */
 /* =========================================================================== */
@@ -220,7 +244,7 @@ html {
   overflow-x: hidden;
   background-color: #000000;
   text-rendering: optimizeLegibility;
-  font-family: 'Lato', 'Arial', sans-serif;
+  font-family: "Lato", "Arial", sans-serif;
 }
 
 /* =========================================================================== */
@@ -293,10 +317,10 @@ ion-icon {
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
+  cursor: pointer !important;
 }
 
-.btn-full:link,
-.btn-full:visited {
+.btn-full {
   margin-right: 15px;
   color: #ffffff;
   background-color: #6c6c6c;
@@ -328,14 +352,14 @@ ion-icon {
 /* =========================================================================== */
 /* Links                                                                       */
 /* =========================================================================== */
-.non-btn:link,
-.non-btn:visited {
+.non-btn {
   padding: 8px 0px;
 
   color: #ffffff;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.2s;
+  cursor: pointer;
 }
 
 .non-btn:hover,
@@ -353,13 +377,13 @@ ion-icon {
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/images/main-background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./assets/images/main-background.jpg");
 }
 
 #not-main-page {
   height: 10vh;
   background: black;
 }
-
 </style>
 
