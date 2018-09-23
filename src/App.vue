@@ -91,7 +91,8 @@ export default {
 
 #donate-button {
   outline: none;
-  margin-right: 510px;
+  float: none;
+  margin-right: 0px;
 }
 
 /* =========================================================================== */
