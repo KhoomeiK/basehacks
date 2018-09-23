@@ -108,7 +108,7 @@ export default {
   margin-right: 10%;
 }
 
-input[type="number"],
+input[type=number],
 select,
 textarea {
   width: 500px;
@@ -130,7 +130,7 @@ textarea {
   width: 500px;
   height: 100px;
 
-  font-family: "Lato";
+  font-family: 'Lato';
 }
 
 #age-label {
@@ -193,16 +193,72 @@ input[type="submit"]:active {
   text-align: left;
 }
 
-#test p {
-  margin-bottom: 10px;
+#question1 {
+  margin-top: 25px;
+  padding-left: 50px;
 }
 
-#test span {
-  margin-left: 10px;
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-#test input {
-  margin-left: 50px;
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #cccccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #028bde;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 8px;
+  left: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: white;
 }
 /* =========================================================================== */
 /*  Footer                                                                     */
@@ -229,6 +285,11 @@ footer {
   margin-top: 20px;
 }
 
+
+
+
+
+
 /* =========================================================================== */
 /* HTML                                                                        */
 /* =========================================================================== */
@@ -244,7 +305,7 @@ html {
   overflow-x: hidden;
   background-color: #000000;
   text-rendering: optimizeLegibility;
-  font-family: "Lato", "Arial", sans-serif;
+  font-family: 'Lato', 'Arial', sans-serif;
 }
 
 /* =========================================================================== */
@@ -317,7 +378,6 @@ ion-icon {
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
-  cursor: pointer !important;
 }
 
 .btn-full {
@@ -352,14 +412,14 @@ ion-icon {
 /* =========================================================================== */
 /* Links                                                                       */
 /* =========================================================================== */
-.non-btn {
+.non-btn:link,
+.non-btn:visited {
   padding: 8px 0px;
 
   color: #ffffff;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.2s;
-  cursor: pointer;
 }
 
 .non-btn:hover,
@@ -377,13 +437,13 @@ ion-icon {
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./assets/images/main-background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/images/main-background.jpg");
 }
 
 #not-main-page {
   height: 10vh;
-  background: black;
+  background:black;
 }
+
 </style>
 

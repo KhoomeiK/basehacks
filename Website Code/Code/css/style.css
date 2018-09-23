@@ -363,6 +363,7 @@ ion-icon {
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .btn-full {
