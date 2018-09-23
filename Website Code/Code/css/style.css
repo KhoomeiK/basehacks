@@ -149,7 +149,7 @@ input[type="submit"]:active {
 /*  Education                                                                  */
 /* =========================================================================== */
 #education {
-  height: 7500px;
+  height: 100%;
   text-align: justify;
 }
 
@@ -365,8 +365,7 @@ ion-icon {
   color: #ffffff;
 }
 
-.btn-full:link,
-.btn-full:visited {
+.btn-full {
   margin-right: 15px;
   color: #ffffff;
   background-color: #6c6c6c;
@@ -428,8 +427,5 @@ ion-icon {
 
 #not-main-page {
   height: 10vh;
-  background-size: cover;
-  background-position: bottom;
-  background-attachment: fixed;
-  background-image: url("../images/backgrounds/Background.jpg");
+  background:black;
 }
