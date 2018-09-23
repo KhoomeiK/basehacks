@@ -22,6 +22,7 @@
           <span class="slider round"></span>
         </label>
         <p id="right"><span v-if="!ready">Not</span> Ready</p>
+      <p style="float: right; margin-right: 100px"> Karma: {{mydata.points}} </p>
       </div>
       <div class="rect">
         <div class="video-container" v-if="ready">
@@ -34,6 +35,7 @@
         <h2>Comment</h2>
         <p>"{{mydata.comment}}"</p>
       </div>
+      <h2> Resources </h2>
       <notes/>
     </section>
     <footerlinks/>
