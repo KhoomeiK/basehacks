@@ -10,7 +10,7 @@
     </header>
 
     <section id="dashboard" >
-      <h2>{{mydata.firstName}} {{mydata.lastName}} Dashboard</h2>
+      <h2>{{mydata.firstName}}'s Dashboard</h2>
       <p id="middle">
         <span v-if="mydata.calls>1">You've made {{mydata.calls}} lives better!</span>
         <span v-if="mydata.calls==1">You've made a life better!</span>
