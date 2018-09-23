@@ -29,7 +29,7 @@ export default {
       // join to channel
       null,
       "testChannel",
-      2,
+      1, // CHANGE THIS UID
       function(uid) {
         console.log("User " + uid + " join channel successfully");
       },
