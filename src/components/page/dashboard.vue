@@ -25,8 +25,8 @@
     </div>
     <div class="rect">
       <div class="video-container">
-        <div id="agora_local" class="video"> </div>
         <div id="agora_remote" class="video"> </div>
+        <div id="agora_local" class="video"> </div>
       </div>
     </div>
       <p id="quote" v-if="!ready">Make someones day.</p>
@@ -175,12 +175,25 @@ export default {
   text-align: center;
 }
 .video-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 10px;
+  padding: 0px;
 }
 .video {
   display: inline-block;
-  height: 500px;
+  height: 100%;
+  width:100%;
+}
+#agora_local{
+  width: 170px;
+  height: 170px;
+  position: relative;
+  display: block;
+  margin-top: -174px;
+  float:right;
+}
+video{
+  position: relative !important;
+}
+#agora_remote div{
+  max-height: 600px;
 }
 </style>
