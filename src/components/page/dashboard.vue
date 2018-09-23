@@ -16,20 +16,13 @@
         <span v-if="mydata.calls==1">You've a life better!</span>
         <span v-if="mydata.calls==0">Let's make someones day better.</span>
       </p>
-      <!-- <div id="switch">
+      <div id="switch">
         <label class="switch">
           <input type="checkbox" @click="toggleReady()">
           <span class="slider round"></span>
         </label>
         <p id="right"><span v-if="!ready">Not</span> Ready</p>
-      </div> -->
-      <div id="switch">
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-      <p id="right">Not Ready</p>
-    </div>
+      </div>
       <div class="rect">
         <div class="video-container">
           <div id="agora_remote" class="video"> </div>
@@ -142,8 +135,7 @@ export default {
           );
           remoteStream.play("agora_remote");
         });
-      }
-      else {
+      } else {
         console.log("not ready");
       }
     },
@@ -190,20 +182,29 @@ export default {
 .video {
   display: inline-block;
   height: 100%;
-  width:100%;
+  width: 100%;
 }
-#agora_local{
+#agora_local {
   width: 170px;
   height: 170px;
   position: relative;
   display: block;
   margin-top: -174px;
-  float:right;
+  float: right;
 }
-video{
+video {
   position: relative !important;
 }
-#agora_remote div{
+#agora_remote div {
   max-height: 600px;
+}
+#agora_remote{
+  min-height: 600px;
+}
+#switch label {
+  z-index: 1000;
+}
+#right {
+  z-index: 1000;
 }
 </style>
