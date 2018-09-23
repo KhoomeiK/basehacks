@@ -29,9 +29,9 @@
           <div id="agora_local" class="video"> </div>
         </div>
       </div>
-      <p id="quote" v-if="!ready">Make someones day.</p>
+      <p id="quote" v-if="!ready">Make someone's day.</p>
       <h2>Comments</h2>
-      <p>"OMG! Elliot Ha has helped me overcome depression and cancer and now I'm a billionaire!"</p>
+      <p>"Wow... {{mydata.firstName}} really helped me overcome my social anxiety. Thank you!"</p>
       <br><br><br>
     </section>
 
@@ -56,9 +56,10 @@ export default {
     async toggleReady() {
       this.setRead(!this.ready);
 
+      let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
+      let stream = "";
       if (this.ready) {
         console.log("ready!");
-        let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
         await client.init(
           // initialize Agora
           "2fdcc95bd67a45e996a0349e87bf0654",
@@ -115,7 +116,7 @@ export default {
 
         client.on("stream-added", function(evt) {
           // subscribes to stream when new stream added to channel
-          var stream = evt.stream;
+          stream = evt.stream;
           console.log("New stream added: " + stream.getId());
 
           client.subscribe(stream, function(err) {
@@ -125,7 +126,7 @@ export default {
 
         client.on("stream-subscribed", function(evt) {
           // plays stream once subscribed
-          var remoteStream = evt.stream;
+          let remoteStream = evt.stream;
           console.log(
             "Subscribe remote stream successfully: " + remoteStream.getId()
           );
@@ -133,6 +134,20 @@ export default {
         });
       } else {
         console.log("not ready");
+        client.unpublish(stream, function(err) {
+          console.log("stream unpublished");
+        });
+        client.unsubscribe(stream, function(err) {
+          console.log("stream unsubscribed");
+        });
+        client.leave(
+          function() {
+            console.log("Left channel successfully");
+          },
+          function(err) {
+            console.log("Leave channel failed");
+          }
+        );
       }
     },
     setRead(val) {
@@ -194,7 +209,7 @@ video {
 #agora_remote div {
   max-height: 600px;
 }
-#agora_remote{
+#agora_remote {
   min-height: 600px;
 }
 #switch label {
