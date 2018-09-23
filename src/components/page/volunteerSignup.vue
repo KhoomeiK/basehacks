@@ -30,7 +30,9 @@
             </div>
             <br><br>
 
-            <div class="span-two-of-three"><input type="submit" id="submit" name="submit"></div>
+            <div class="span-two-of-three">
+              <input type="submit" id="submit" name="submit" class="btn btn-full">
+            </div>
           </form>
         </ul>
       </div>
@@ -56,7 +58,7 @@ export default {
   data() {
     return {
       age: null,
-      language: null,
+      language: 'english',
       feedback: null
     };
   },

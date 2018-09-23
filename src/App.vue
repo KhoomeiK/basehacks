@@ -12,7 +12,8 @@ export default {
 };
 </script>
 
-<style>/* =========================================================================== */
+<style>
+/* =========================================================================== */
 /*  Main Page                                                                  */
 /* =========================================================================== */
 #main-page-text-box {
@@ -26,7 +27,6 @@ export default {
   font-size: 24px;
   margin-top: 50px;
 }
-
 
 #main-page-company-name {
   padding-top: 50px;
@@ -114,7 +114,7 @@ export default {
   margin-right: 10%;
 }
 
-input[type=number],
+input[type="number"],
 select,
 textarea {
   width: 500px;
@@ -136,7 +136,7 @@ textarea {
   width: 500px;
   height: 100px;
 
-  font-family: 'Lato';
+  font-family: "Lato";
 }
 
 #age-label {
@@ -386,6 +386,7 @@ footer {
 
 #footer-links {
   float: left;
+  margin-right: -234px;
 }
 
 .footer-info {
@@ -393,11 +394,6 @@ footer {
   margin-left: 50px;
   margin-top: 20px;
 }
-
-
-
-
-
 
 /* =========================================================================== */
 /* HTML                                                                        */
@@ -414,7 +410,7 @@ html {
   overflow-x: hidden;
   background-color: #000000;
   text-rendering: optimizeLegibility;
-  font-family: 'Lato', 'Arial', sans-serif;
+  font-family: "Lato", "Arial", sans-serif;
 }
 
 /* =========================================================================== */
@@ -488,7 +484,9 @@ ion-icon {
 }
 
 /* Hide default HTML checkbox */
-.switch input {display:none;}
+.switch input {
+  display: none;
+}
 
 /* The slider */
 .slider {
@@ -499,8 +497,8 @@ ion-icon {
   right: 0;
   bottom: 0;
   background-color: #b50000;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -511,8 +509,8 @@ ion-icon {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -609,12 +607,13 @@ input:checked + .slider:before {
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/images/main-background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./assets/images/main-background.jpg");
 }
 
 #not-main-page {
   height: 10vh;
-  background:black;
+  background: black;
 }
 </style>
 

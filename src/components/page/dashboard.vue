@@ -31,7 +31,7 @@
       </div>
       <p id="quote" v-if="!ready">Make someone's day.</p>
       <h2>Comments</h2>
-      <p>"Wow... {{mydata.firstName}} really helped me overcome my social anxiety. Thank you!"</p>
+      <!-- <p>"Wow... {{mydata.firstName}} really helped me overcome my social anxiety. Thank you!"</p> -->
       <br><br><br>
     </section>
 
