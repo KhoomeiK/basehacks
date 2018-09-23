@@ -18,7 +18,7 @@ export default {
   name: "rate",
   methods: {
     async submit() {
-      let id = "KLwFrH3FcyNkcrOyAsdY";
+      let id = "KLwFrH3FcyNkcrOyAsdY"; // this needs to be received from call
       console.log(this.comment);
       let call = firebase.functions().httpsCallable("sentiment");
       call(this.comment).then(res => {
