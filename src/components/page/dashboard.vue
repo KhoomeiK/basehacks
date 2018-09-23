@@ -10,6 +10,7 @@
 
     <section id="dashboard">
       <h2>Elliot Ha's Dashboard</h2>
+      {{ready}}
       <ion-icon id="happy" name="happy"></ion-icon><h3>You've helped 10,000 people!</h3>
       <div class="call-dashboard">
         <div style="text-align:center">
@@ -41,12 +42,23 @@ export default {
   },
   methods: {
     toggleReady() {
+      this.setRead(!this.ready);
+    },
+    setRead(val) {
       let ref = db.collection("users").doc(firebase.auth().currentUser.uid);
       ref.update({
-        ready: !this.ready
+        ready: val
       });
-      this.ready = !this.ready;
+      this.ready = val;
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    let ref = db.collection("users").doc(firebase.auth().currentUser.uid);
+    if (this.ready) {
+      ref.update({ ready: false }).then(() => {
+        next();
+      });
+    } else next();
   },
   components: {
     footerlinks,
