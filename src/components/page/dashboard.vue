@@ -33,10 +33,6 @@
       <h2>Comments</h2>
       <p>"OMG! Elliot Ha has helped me overcome depression and cancer and now I'm a billionaire!"</p>
       <br><br><br>
-      <h2>Resources</h2>
-      <ul>
-        <li><a href="https://www.nimh.nih.gov/index.shtml"></a></li>
-      </ul>
     </section>
 
     <footerlinks/>
