@@ -1,14 +1,10 @@
 <template>
     <div>
       <h1>THE CALL</h1>
-      <row>
-        <col> 
-          <div id="agora_local" style="float: left"> </div>
-        </col>
-        <col> 
-          <div id="agora_remote"> </div>
-        </col>
-      </row>
+      <div class="video-container">
+        <div id="agora_local" class="video"></div>
+        <div id="agora_remote" class="video"></div>
+      </div>
       <router-link :to="{name:'rate'}">Rate</router-link>
     </div>
 </template>
@@ -33,7 +29,7 @@ export default {
       // join to channel
       null,
       "testChannel",
-      1,
+      2,
       function(uid) {
         console.log("User " + uid + " join channel successfully");
       },
@@ -98,14 +94,13 @@ export default {
 </script>
 
 <style>
-#player_1 {
-  position: absolute !important;
-  width: 50% !important;
-  height: 50% !important;
+.video-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px;
 }
-#player_2 {
-  position: absolute !important;
-  width: 50% !important;
-  height: 50% !important;
+.video{
+  display: inline-block;
+  height: 500px;
 }
 </style>
