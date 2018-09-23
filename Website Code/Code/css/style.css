@@ -7,6 +7,13 @@
   font-size: 100%;
 }
 
+#main-page-text-box p {
+  color: white;
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+
 #main-page-company-name {
   padding-top: 50px;
   margin-left: 75px;
@@ -316,6 +323,37 @@ input[type="submit"]:active {
 /* =========================================================================== */
 #suspended-link {
   color: #028bde;
+}
+
+/* =========================================================================== */
+/*  Rate                                                                       */
+/* =========================================================================== */
+#rate {
+  height: 500px;
+}
+
+#rate span {
+  text-align: justify;
+}
+
+#rate-form {
+  margin-left: 470px;
+}
+
+#message-label {
+  margin-left: 140px;
+  margin-bottom: -50px;
+}
+
+.button-social:not(hover) {
+  color: #2d2d2d;
+  transition: color 0.2s;
+}
+
+.button-social:hover {
+  color: #028bde;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 /* =========================================================================== */
 /*  Footer                                                                     */
