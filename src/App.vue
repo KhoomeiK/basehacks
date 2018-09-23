@@ -86,8 +86,8 @@ export default {
 /* =========================================================================== */
 /*  Form                                                                       */
 /* =========================================================================== */
-#form {
-  height: 300px;
+#contact-form {
+  margin-bottom: 300px;
 }
 
 .span-one-of-three {
@@ -159,7 +159,8 @@ input[type="submit"]:active {
 /*  Education                                                                  */
 /* =========================================================================== */
 #education {
-  height: 2000px;
+  height: 100%;
+  text-align: justify;
 }
 
 #education li {
@@ -174,6 +175,10 @@ input[type="submit"]:active {
 
 #education .non-btn {
   color: #000000;
+}
+
+#education .list-bulleted li {
+  list-style: disc;
 }
 /* =========================================================================== */
 /*  Footer                                                                     */

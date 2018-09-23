@@ -13,7 +13,26 @@
         <ion-icon name="pulse"></ion-icon>
         <h2>Help Somebody in Need Today</h2>
         <p>We're connecting teenagers with teenagers to make mental<br> health easier and more accessible than ever</p>
-        <a class="btn btn-full" href="#">Sign Up/Sign In</a>
+        
+        <ul id="contact-form">
+          <form @submit.prevent="signup()">
+            <div id="age-label" class="span-one-of-three"><label for="age">Age</label></div>
+            <div class="span-two-of-three"><input type="number" id="age" name="age" placeholder="Age" required v-model="age"></div>
+            <br><br>
+
+            <div id="language-label" class="span-one-of-three"><label for="language">Language</label></div>
+            <div class="span-two-of-three">
+              <select id="language" name="language" required v-model="language">
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>  
+                <option value="french">French</option>
+              </select>
+            </div>
+            <br><br>
+
+            <div class="span-two-of-three"><input type="submit" id="submit" name="submit"></div>
+          </form>
+        </ul>
       </div>
       <div class="block">
         <ion-icon name="heart"></ion-icon>
