@@ -2,10 +2,10 @@
     <ul>
         <li v-if="!curentUser"><a class="non-btn" @click.prevent="login()" href="#">Sign In</a></li>
         <li v-if="curentUser"><a class="non-btn" @click.prevent="logout()" href="#">Log Out</a></li>
-        <li v-if="curentUser"><router-link class="non-btn" :to="{name:'dashboard'}">Dashboard</router-link></li>
-        <li><router-link class="non-btn" :to="{name:'donate'}">Donate</router-link></li>
-        <li><router-link class="non-btn" :to="{name:'volunteerSignup'}">Volunteer</router-link></li>
         <li><router-link class="non-btn" :to="{name:'about'}">About Us</router-link></li>
+        <li><router-link class="non-btn" :to="{name:'donate'}">Donate</router-link></li>
+        <li v-if="!curentUser"><router-link class="non-btn" :to="{name:'volunteerSignup'}">Volunteer</router-link></li>
+        <li v-if="curentUser"><router-link class="non-btn" :to="{name:'dashboard'}">Dashboard</router-link></li>
         <li><router-link class="non-btn" :to="{name:'homePage'}">Homepage</router-link></li>
     </ul>
 </template>
