@@ -49,20 +49,17 @@ export default {
       function() {
         console.log("getUserMedia successfully");
         // Use agora_local as ID of the dom element
-        console.log(document.getElementById("agora_local"));
         localStream.play("agora_local");
+
+        client.publish(localStream, function(err) {
+          // publish stream to channel
+          console.log("Publish local stream error: " + err);
+        });
       },
       function(err) {
         console.log("getUserMedia failed", err);
       }
     );
-
-    console.log("about to publish");
-    client.publish(localStream, function(err) {
-      // publish stream to channel
-      console.log("Publish local stream error: " + err);
-    });
-    console.log("published");
 
     client.on("stream-published", function(evt) {
       // occurs after stream publishes
