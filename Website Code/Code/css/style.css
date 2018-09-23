@@ -372,6 +372,7 @@ footer {
 
 #footer-links {
   float: left;
+  margin-right: -234px;
 }
 
 .footer-info {
