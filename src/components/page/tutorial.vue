@@ -9,8 +9,8 @@
     </header>
 
     <section id="education">
-      <h2>Curriculum &mdash; Index</h2>
-      <ul id="curriculum-index">
+      <h2 v-if="!exam">Curriculum &mdash; Index</h2>
+      <ul id="curriculum-index" v-if="!exam">
         <li @click="toggle(0)"><a class="non-btn"><strong>Mission Statement</strong></a></li>
         <p v-if="lessons[0]">
           We&You is for a platform for teenagers who wants to live in a world where the human experience is free from stigma and stereotypes and rich with love and support. Teens would prefer talking to other teens about their mental health issues.We believe that each one of us is inherently valuable. We do not measure people based on where they are from, what they look like, or what position they hold. We recognize that people make sense in the larger story of their lives. We understand that people are complicated and that life is not simple or easy. No matter where we are, being kind, compassionate, and accepting of one another enables us all to grow.We do not tolerate people being mean, harmful, or rejecting of others. Although there are forces that tend to disempower and create division, we stand together as we compassionately care for and champion one another.  We see our differences as a strength. We are united in our shared goal of creating a place where all can find acceptance and be welcomed to a home where we all belong.
@@ -128,73 +128,73 @@
           I will keep these promises as a means of showing myself and the community that I am dedicated to my personal health and the betterment of the entire We & You community.
           </p>
         </div>
+        <li>
+          <button class="btn btn-full" @click="exam=!exam">Take Exam</button>
+        </li>
+      </ul>
+      <ul v-if="exam">
         <li><strong>Exam</strong></li>
-        <p>
-          <strong>Instructions: In order to be volunteer on this site, you go through a verification process before becoming a volunteer. This is a short quiz that will assess your knowledge so far.</strong>
-          <br><br>
-          1.) Who is going to seek your support on this platform? Why?<br>
-            A.) Adults will seek support here because they suffer from marital problems.<br>
-            B.) Veterans will seek support here because the need help coping with PTSD.<br>
-            C.) Teens will seek support here because they want to talk to other teens about their mental health issues.<br>
-            D.) Adults will seek support here because they suffer from anxiety or depression.<br>
-          <br><br>
-          2.) What kinds of listening should you do when speaking to a client through a call?<br>
-            A.) Active and Verbal<br>
-            B.) Silent and Active<br>
-            C.) Verbal and Disinterested<br>
-            D.) Active and Interruptive<br>
-          <br><br>
-          3.) Open questions are less effective than closed questions.<br>
-            A.) TRUE<br>
-            B.) FALSE<br>
-          <br><br>
-          4.) In general, what does anxiety stem from?<br>
-            A.) Expired food<br>
-            B.) A bad day<br>
-            C.) Boring classes at school<br>
-            D.) Worry<br>
-          <br><br>
-          5.) What is something important that you have to tell a client specifically seeking support for depression?<br>
-            A.) You have it so good, why aren’t you happy?<br>
-            B.) Happiness is a choice.<br>
-            C.) You’ll feel better if you start going to church.<br>
-            D.) You are not alone.<br>
-          <br><br>
-          6.) Which of the following list examples of each kind of abuse?<br>
-            A.) Yelling, Beating, Rape<br>
-            B.) Rape, Whipping, Beating<br>
-            C.)Saying Hello, Yelling, Force-feeding<br>
-            D.) Talking, Homophobic remarks, Dancing<br>
-          <br><br>
-          7.) How many times more likely is LGBTQ+ youth to commit suicide than straight, cisgender youth?<br>
-            A.) Same<br>
-            B.) 2<br>
-            C.) 3<br>
-            D.) 4<br>
-          <br><br>
-          8.) Teens that are self harming should use alternative healthier coping mechanisms.<br>
-            A.) TRUE<br>
-            B.) FALSE<br>
-
-          9.) You must passionately argue with a suicidal client until they say they will not harm themselves.<br>
-            A.) TRUE<br>
-            B.) FALSE<br>
-          <br><br>
-          10.) Tell actively suicidal clients who refuse to make a safety plan to go to an emergency room.<br>
-            A.) TRUE<br>
-            B.) FALSE<br>
-          <br><br>
-          11.) Who can you discriminate against?<br>
-            A.) A suicidal, Jewish individual<br>
-            B.) People who like pineapple on pizza<br>
-            C.) Asian Americans who have anxiety<br>
-            D.)Nobody<br>
-
-        </p>
-        <li><strong>What Comes Next?</strong></li>
-        <p>
-
-        </p>
+          <p>
+            <strong>Instructions: In order to be volunteer on this site, you go through a verification process before becoming a volunteer. This is a short quiz that will assess your knowledge so far.</strong>
+            <br><br>
+            1.) Who is going to seek your support on this platform? Why?<br>
+              A.) Adults will seek support here because they suffer from marital problems.<br>
+              B.) Veterans will seek support here because the need help coping with PTSD.<br>
+              C.) Teens will seek support here because they want to talk to other teens about their mental health issues.<br>
+              D.) Adults will seek support here because they suffer from anxiety or depression.<br>
+            <br><br>
+            2.) What kinds of listening should you do when speaking to a client through a call?<br>
+              A.) Active and Verbal<br>
+              B.) Silent and Active<br>
+              C.) Verbal and Disinterested<br>
+              D.) Active and Interruptive<br>
+            <br><br>
+            3.) Open questions are less effective than closed questions.<br>
+              A.) TRUE<br>
+              B.) FALSE<br>
+            <br><br>
+            4.) In general, what does anxiety stem from?<br>
+              A.) Expired food<br>
+              B.) A bad day<br>
+              C.) Boring classes at school<br>
+              D.) Worry<br>
+            <br><br>
+            5.) What is something important that you have to tell a client specifically seeking support for depression?<br>
+              A.) You have it so good, why aren’t you happy?<br>
+              B.) Happiness is a choice.<br>
+              C.) You’ll feel better if you start going to church.<br>
+              D.) You are not alone.<br>
+            <br><br>
+            6.) Which of the following list examples of each kind of abuse?<br>
+              A.) Yelling, Beating, Rape<br>
+              B.) Rape, Whipping, Beating<br>
+              C.)Saying Hello, Yelling, Force-feeding<br>
+              D.) Talking, Homophobic remarks, Dancing<br>
+            <br><br>
+            7.) How many times more likely is LGBTQ+ youth to commit suicide than straight, cisgender youth?<br>
+              A.) Same<br>
+              B.) 2<br>
+              C.) 3<br>
+              D.) 4<br>
+            <br><br>
+            8.) Teens that are self harming should use alternative healthier coping mechanisms.<br>
+              A.) TRUE<br>
+              B.) FALSE<br>
+            9.) You must passionately argue with a suicidal client until they say they will not harm themselves.<br>
+              A.) TRUE<br>
+              B.) FALSE<br>
+            <br><br>
+            10.) Tell actively suicidal clients who refuse to make a safety plan to go to an emergency room.<br>
+              A.) TRUE<br>
+              B.) FALSE<br>
+            <br><br>
+            11.) Who can you discriminate against?<br>
+              A.) A suicidal, Jewish individual<br>
+              B.) People who like pineapple on pizza<br>
+              C.) Asian Americans who have anxiety<br>
+              D.)Nobody<br>
+          </p>
+        <li/>
       </ul>
     </section>
 
@@ -209,14 +209,12 @@ export default {
   name: "tutorial",
   data() {
     return {
-      lessons: [false, false, false, false, false, false, false, false, false]
+      lessons: [false, false, false, false, false, false, false, false, false],
+      exam: false
     };
   },
   methods: {
     toggle(i) {
-      for(var j=0;j<this.lessons.length;j++){
-        this.$set(this.lessons,false,!this.lessons[i])
-      }
       this.$set(this.lessons, i, !this.lessons[i]);
     }
   },
@@ -230,5 +228,13 @@ export default {
 <style>
 .non-btn {
   cursor: pointer;
+}
+.btn-full {
+  margin-right: 15px;
+  color: #ffffff;
+  background-color: #6c6c6c;
+  transition: color 0.2s, background-color 0.2s;
+  cursor: pointer;
+  outline: none;
 }
 </style>
