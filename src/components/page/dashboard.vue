@@ -13,7 +13,7 @@
       <h2>{{mydata.firstName}} {{mydata.lastName}} Dashboard</h2>
       <p id="middle">
         <span v-if="mydata.calls>1">You've made {{mydata.calls}} lives better!</span>
-        <span v-if="mydata.calls==1">You've a life better!</span>
+        <span v-if="mydata.calls==1">You've made a life better!</span>
         <span v-if="mydata.calls==0">Let's make someones day better.</span>
       </p>
       <div id="switch">
@@ -35,7 +35,7 @@
       <br><br><br>
       <h2>Resources</h2>
       <ul>
-        <li><a href="ree">reee</a></li>
+        <li><a href="https://www.nimh.nih.gov/index.shtml"></a></li>
       </ul>
     </section>
 
