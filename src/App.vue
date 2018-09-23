@@ -260,6 +260,60 @@ input[type="submit"]:active {
   border-radius: 50%;
   background: white;
 }
+
+/* =========================================================================== */
+/*  Dashboard                                                                  */
+/* =========================================================================== */
+
+#dashboard {
+  height: 1200px;
+}
+
+#call:not(hover) {
+  border: 2px solid #2c2c2c;
+  border-radius: 10px;
+  float: left;
+  margin-top: 325px;
+  margin-left: -75px;
+  font-size: 500%;
+  transition: background-color 0.2s;
+}
+
+#call:hover {
+  background-color: #7d7;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#callp {
+  font-size: 48px;
+  margin-top: 325px;
+  padding-top: 20px;
+  margin-left: 20px;
+  float: left;
+}
+
+#dashboard .rect {
+  margin: 0px 0px 50px 120px;
+  border: 2px solid #000000;
+}
+
+#dashboard h3 {
+  padding-top: 15px;
+  margin-right: 385px;
+}
+
+#happy {
+  padding-left: 415px;
+  float: left;
+}
+
+.call-dashboard {
+  width: 100%;
+  padding-left: 500px;
+  margin-bottom: 50px;
+}
+
 /* =========================================================================== */
 /*  Footer                                                                     */
 /* =========================================================================== */
@@ -363,6 +417,12 @@ ion-icon {
   color: #028bde;
 }
 
+.rect {
+  width: 80%;
+  height: 750px;
+  background-color: #eeeeee;
+}
+
 .block {
   margin-bottom: 200px;
 }
@@ -378,6 +438,7 @@ ion-icon {
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .btn-full {
@@ -444,6 +505,5 @@ ion-icon {
   height: 10vh;
   background:black;
 }
-
 </style>
 
