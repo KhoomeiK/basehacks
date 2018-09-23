@@ -14,7 +14,7 @@
       <p id="middle">
         <span v-if="mydata.calls>1">You've made {{mydata.calls}} lives better!</span>
         <span v-if="mydata.calls==1">You've made a life better!</span>
-        <span v-if="mydata.calls==0">Let's make someones day better.</span>
+        <span v-if="mydata.calls==0">Let's make someones life better.</span>
       </p>
       <div id="switch">
         <label class="switch">
