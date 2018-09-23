@@ -1,11 +1,14 @@
 <template>
     <div>
-      <h1>THE CALL</h1>
-      <div class="video-container">
-        <div id="agora_local" class="video"></div>
-        <div id="agora_remote" class="video"></div>
-      </div>
-      <router-link :to="{name:'rate'}">Rate</router-link>
+      <section id="dashboard">
+        <div class="rect">
+          <div class="video-container">
+            <div id="agora_remote" class="video"></div>
+            <div id="agora_local" class="video"></div>
+          </div>
+        </div>
+        <router-link :to="{name:'rate', params:{id}}">Rate</router-link>
+      </section>
     </div>
 </template>
 
@@ -13,6 +16,7 @@
 export default {
   name: "theCall",
   async created() {
+    console.log(this.id);
     let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
     await client.init(
       // initialize Agora
@@ -28,8 +32,8 @@ export default {
     client.join(
       // join to channel
       null,
-      "testChannel",
-      1, // CHANGE THIS UID
+      this.id,
+      0,
       function(uid) {
         console.log("User " + uid + " join channel successfully");
       },
@@ -88,19 +92,43 @@ export default {
     });
   },
   data() {
-    return {};
+    return {
+      id: this.$route.params.id
+    };
   }
 };
 </script>
 
 <style>
 .video-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 10px;
+  padding: 0px;
 }
-.video{
+.video {
   display: inline-block;
-  height: 500px;
+  height: 100%;
+  width: 100%;
+}
+#agora_local {
+  width: 170px;
+  height: 170px;
+  position: relative;
+  display: block;
+  margin-top: -174px;
+  float: right;
+}
+video {
+  position: relative !important;
+}
+#agora_remote div {
+  max-height: 600px;
+}
+#agora_remote{
+  min-height: 600px;
+}
+#switch label {
+  z-index: 1000;
+}
+#right {
+  z-index: 1000;
 }
 </style>

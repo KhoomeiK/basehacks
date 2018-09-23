@@ -18,32 +18,36 @@
           <li><a class="non-btn" href="../index.html">Homepage</a></li>
         </ul>
       </div>
+
     </header>
 
-    <section id="test">
-      <h2>Exam</h2>
-      <form action="#">
-        <p>1.) Who is going to seek your support on this platform? Why?</p>
-        <div id="question1">
-         <label class="container">Adults will seek support here because they suffer from marital problems.
-           <input type="radio" name="radio">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container">Veterans will seek support here because the need help coping with PTSD.
-           <input type="radio" name="radio">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container">Teens will seek support here because they want to talk to other teens about their mental health issues.
-           <input type="radio" name="radio">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container">Adults will seek support here because they suffer from anxiety or depression.
-           <input type="radio" name="radio">
-           <span class="checkmark"></span>
-         </label>
-        </div>
+    <section id="callrequest">
+      <h2>Call Request</h2>
+      <form>
 
-       </form>
+        <div id="age-label" class="span-one-of-three"><label for="age">Age</label></div>
+        <div class="span-two-of-three"><select id="number" id="age" name="age" required>
+          <option value="under">Under 18</option>
+          <option value="over">18+</option>
+        </select></div>
+        <br><br>
+
+        <div id="language-label" class="span-one-of-three"><label for="language">Language</label></div>
+        <div class="span-two-of-three"><select id="language" name="language" required>
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="french">French</option>
+        </select></div>
+        <br><br>
+
+        <div class="span-two-of-three"><input type="submit" id="submit" value="Call" name="submit"></div>
+      </form>
+      <h2>Information</h2>
+      <div id="request-info">
+        <p>
+          After filling out the form above, you will be connected to a counselor through a video call shortly. They will listen to you, understand how your problem is affecting you, provide support, and share resources that may be helpful.
+        </p>
+      </div>
     </section>
 
     <footer>

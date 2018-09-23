@@ -20,30 +20,31 @@
       </div>
     </header>
 
-    <section id="test">
-      <h2>Exam</h2>
-      <form action="#">
-        <p>1.) Who is going to seek your support on this platform? Why?</p>
-        <div id="question1">
-         <label class="container">Adults will seek support here because they suffer from marital problems.
+    <section id="rate">
+      <h2>How would you rate your service?</h2>
+      <form>
+        <div id="rate-form">
+         <span>
+           <label class="container">I feel better.
+           <input type="radio" name="radio" required>
+           <span class="checkmark"></span>
+         </label>
+         <label class="container">I feel the same.
            <input type="radio" name="radio">
            <span class="checkmark"></span>
          </label>
-         <label class="container">Veterans will seek support here because the need help coping with PTSD.
+         <label class="container">I feel worse.
            <input type="radio" name="radio">
            <span class="checkmark"></span>
          </label>
-         <label class="container">Teens will seek support here because they want to talk to other teens about their mental health issues.
-           <input type="radio" name="radio">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container">Adults will seek support here because they suffer from anxiety or depression.
-           <input type="radio" name="radio">
-           <span class="checkmark"></span>
-         </label>
+       </span>
         </div>
-
-       </form>
+        <br><br>
+        <div id="message-label" class="span-one-of-three"><label for="message">Message</label></div>
+        <div class="span-two-of-three"><textarea id="message" name="message" placeholder="Message" required></textarea></div>
+        <br><br>
+        <div class="span-two-of-three"><input type="submit" name="submit"></div>
+      </form>
     </section>
 
     <footer>

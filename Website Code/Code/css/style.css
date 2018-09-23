@@ -7,6 +7,13 @@
   font-size: 100%;
 }
 
+#main-page-text-box p {
+  color: white;
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+
 #main-page-company-name {
   padding-top: 50px;
   margin-left: 75px;
@@ -93,7 +100,7 @@
   margin-right: 10%;
 }
 
-input[type="number"],
+input[type=number],
 select,
 textarea {
   width: 500px;
@@ -115,7 +122,7 @@ textarea {
   width: 500px;
   height: 100px;
 
-  font-family: "Lato";
+  font-family: 'Lato';
 }
 
 #age-label {
@@ -178,16 +185,175 @@ input[type="submit"]:active {
   text-align: left;
 }
 
-#test p {
-  margin-bottom: 10px;
+#question1 {
+  margin-top: 25px;
+  padding-left: 50px;
 }
 
-#test span {
-  margin-left: 10px;
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-#test input {
-  margin-left: 50px;
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #cccccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #028bde;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 8px;
+  left: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* =========================================================================== */
+/*  Dashboard                                                                  */
+/* =========================================================================== */
+#dashboard {
+  height: 100%;
+  width: 100%;
+  padding: 100px 0px;
+}
+
+#middle {
+  float: left;
+  margin-left: 30px;
+}
+
+#right {
+  float: right;
+  margin-right: 10px;
+}
+
+#quote {
+  font-size: 36px;
+  margin-top: -500px;
+  margin-bottom: 500px;
+}
+
+#call:not(hover) {
+  border: 2px solid #2c2c2c;
+  border-radius: 10px;
+  font-size: 500%;
+  transition: background-color 0.2s;
+}
+
+#call:hover {
+  background-color: #7d7;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#dashboard .rect {
+  margin: 100px 2%;
+  border: 2px solid #000000;
+}
+
+.rect {
+  width: 96%;
+  height: 600px;
+  background-color: #eeeeee;
+}
+
+/* =========================================================================== */
+/*  Request                                                                    */
+/* =========================================================================== */
+#callrequest form {
+  margin-bottom: 200px;
+}
+
+#request-info {
+  width: 96%;
+  margin: 0 2%;
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  text-align: justify;
+}
+
+/* =========================================================================== */
+/*  Suspended                                                                  */
+/* =========================================================================== */
+#suspended-link {
+  color: #028bde;
+}
+
+/* =========================================================================== */
+/*  Rate                                                                       */
+/* =========================================================================== */
+#rate {
+  height: 500px;
+}
+
+#rate span {
+  text-align: justify;
+}
+
+#rate-form {
+  margin-left: 470px;
+}
+
+#message-label {
+  margin-left: 140px;
+  margin-bottom: -50px;
+}
+
+.button-social:not(hover) {
+  color: #2d2d2d;
+  transition: color 0.2s;
+}
+
+.button-social:hover {
+  color: #028bde;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 /* =========================================================================== */
 /*  Footer                                                                     */
@@ -201,7 +367,7 @@ footer {
 #copyright {
   padding-top: 100px;
   margin-bottom: 20px;
-  padding-left: 700px;
+  text-align: center;
 }
 
 #footer-links {
@@ -213,6 +379,11 @@ footer {
   margin-left: 50px;
   margin-top: 20px;
 }
+
+
+
+
+
 
 /* =========================================================================== */
 /* HTML                                                                        */
@@ -229,7 +400,7 @@ html {
   overflow-x: hidden;
   background-color: #000000;
   text-rendering: optimizeLegibility;
-  font-family: "Lato", "Arial", sans-serif;
+  font-family: 'Lato', 'Arial', sans-serif;
 }
 
 /* =========================================================================== */
@@ -291,6 +462,68 @@ ion-icon {
   margin-bottom: 200px;
 }
 
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  float: right;
+  margin-right: 30px;
+  margin-top: -3px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b50000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #3abf0a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3abf0a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 /* =========================================================================== */
 /* Buttons                                                                     */
 /* =========================================================================== */
@@ -302,7 +535,7 @@ ion-icon {
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
-  cursor: pointer !important;
+  cursor: pointer;
 }
 
 .btn-full {
@@ -337,14 +570,14 @@ ion-icon {
 /* =========================================================================== */
 /* Links                                                                       */
 /* =========================================================================== */
-.non-btn {
+.non-btn:link,
+.non-btn:visited {
   padding: 8px 0px;
 
   color: #ffffff;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.2s;
-  cursor: pointer;
 }
 
 .non-btn:hover,
@@ -362,11 +595,10 @@ ion-icon {
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../images/backgrounds/main-background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/backgrounds/main-background.jpg");
 }
 
 #not-main-page {
   height: 10vh;
-  background: black;
+  background:black;
 }
