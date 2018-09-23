@@ -1,6 +1,7 @@
 <template>
     <div>
       <section id="dashboard">
+      <h2>Call in Progress</h2>
         <div class="rect">
           <div class="video-container">
             <div id="agora_remote" class="video"></div>

@@ -159,6 +159,7 @@ export default {
     }
   },
   beforeRouteLeave(to, from, next) {
+    if (!firebase.auth().currentUser) next();
     let ref = db.collection("users").doc(firebase.auth().currentUser.uid);
     if (this.ready) {
       ref.update({ ready: false }).then(() => {

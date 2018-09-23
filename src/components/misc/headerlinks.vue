@@ -1,6 +1,7 @@
 <template>
     <ul>
-        <li><a class="non-btn" @click.prevent="login()" href="">Sign In</a></li>
+        <li v-if="!curentUser"><a class="non-btn" @click.prevent="login()" href="#">Sign In</a></li>
+        <li v-if="curentUser"><a class="non-btn" @click.prevent="logout()" href="#">Log Out</a></li>
         <li><router-link class="non-btn" :to="{name:'donate'}">Donate</router-link></li>
         <li><router-link class="non-btn" :to="{name:'volunteerSignup'}">Volunteer</router-link></li>
         <li><router-link class="non-btn" :to="{name:'about'}">About Us</router-link></li>
@@ -15,7 +16,9 @@ var provider = new firebase.auth.GoogleAuthProvider();
 export default {
   name: "headerlinks",
   data() {
-    return {};
+    return {
+      curentUser: null
+    };
   },
   methods: {
     login() {
@@ -36,7 +39,16 @@ export default {
           });
           console.log(ref);
         });
+    },logout(){
+      firebase.auth().signOut().then(()=>{
+        this.$router.push({name:'homePage'})
+      })
     }
+  },
+  created() {
+    firebase.auth().onAuthStateChanged(user => {
+      this.curentUser = user;
+    });
   }
 };
 </script>
