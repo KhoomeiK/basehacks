@@ -5,7 +5,7 @@
         <div id="agora_local" class="video"></div>
         <div id="agora_remote" class="video"></div>
       </div>
-      <router-link :to="{name:'rate'}">Rate</router-link>
+      <router-link :to="{name:'rate', params:{id}}">Rate</router-link>
     </div>
 </template>
 
@@ -13,6 +13,7 @@
 export default {
   name: "theCall",
   async created() {
+    console.log(this.id);
     let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
     await client.init(
       // initialize Agora
@@ -28,8 +29,8 @@ export default {
     client.join(
       // join to channel
       null,
-      "testChannel",
-      1, // CHANGE THIS UID
+      this.id,
+      0,
       function(uid) {
         console.log("User " + uid + " join channel successfully");
       },
@@ -88,7 +89,9 @@ export default {
     });
   },
   data() {
-    return {};
+    return {
+      id: this.$route.params.id
+    };
   }
 };
 </script>
@@ -99,7 +102,7 @@ export default {
   grid-template-columns: 50% 50%;
   padding: 10px;
 }
-.video{
+.video {
   display: inline-block;
   height: 500px;
 }

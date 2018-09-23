@@ -41,12 +41,12 @@ export default new Router({
       component: donate
     },
     {
-      path: '/rate',
+      path: '/rate/:id',
       name: 'rate',
       component: rate
     },
     {
-      path: '/theCall',
+      path: '/theCall/:id',
       name: 'theCall',
       component: theCall
     },
