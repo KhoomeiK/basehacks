@@ -1,14 +1,28 @@
 <template>
     <div>
-        <h1>VOLUNTEER SIGNUP</h1>
-        <form @submit.prevent="signup">
-          age:
-          <input type="number" v-model="age"><br>
-          language:
-          <input type="text" v-model="language"><br>
-          <button @click="signup()">SignUp</button>
-        </form>
-        <router-link :to="{name:'tutorial'}">tutorial</router-link>
+      <header id="not-main-page">
+      <a href="../index.html"><h1 id="not-main-page-company-name"><strong>We & You</strong></h1></a>
+
+      <div id="not-main-page-nav-bar">
+        <headerlinks/>
+      </div>
+    </header>
+
+    <section id="volunteer">
+      <div class="block">
+        <ion-icon name="pulse"></ion-icon>
+        <h2>Help Somebody in Need Today</h2>
+        <p>We're connecting teenagers with teenagers to make mental<br> health easier and more accessible than ever</p>
+        <a class="btn btn-full" href="#">Sign Up/Sign In</a>
+      </div>
+      <div class="block">
+        <ion-icon name="heart"></ion-icon>
+        <h2>You Make a Difference</h2>
+        <p>Learn more about what We & You can do and why here.</p>
+        <a class="btn btn-full" href="about.html">Learn More</a>
+      </div>
+    </section>
+    <footerlinks/>
     </div>
 </template>
 
@@ -16,6 +30,8 @@
 import firebase from "firebase";
 let db = firebase.firestore();
 var provider = new firebase.auth.GoogleAuthProvider();
+import footerlinks from "@/components/misc/footerlinks";
+import headerlinks from "@/components/misc/headerlinks";
 export default {
   name: "volunteerSignup",
   data() {
@@ -55,6 +71,10 @@ export default {
         this.feedback = "You must enter an age and language";
       }
     }
+  },
+  components: {
+    headerlinks,
+    footerlinks
   }
 };
 </script>

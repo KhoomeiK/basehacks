@@ -1,0 +1,350 @@
+/* =========================================================================== */
+/*  Main Page                                                                  */
+/* =========================================================================== */
+#main-page-text-box {
+  padding-top: 250px;
+  text-align: center;
+  font-size: 100%;
+}
+
+#main-page-company-name {
+  padding-top: 50px;
+  margin-left: 75px;
+  float: left;
+  font-size: 20px;
+}
+
+#main-page-nav-bar {
+  margin-left: 75px;
+}
+
+#main-page-nav-bar li {
+  padding-top: 50px;
+  margin-right: 75px;
+  float: right;
+  list-style: none;
+}
+
+#not-main-page-company-name {
+  padding-top: 20px;
+  margin-left: 75px;
+  float: left;
+  font-size: 20px;
+}
+
+#not-main-page-nav-bar {
+  margin-left: 75px;
+}
+
+#not-main-page-nav-bar li {
+  padding-top: 20px;
+  margin-right: 75px;
+  float: right;
+  list-style: none;
+}
+
+/* =========================================================================== */
+/*  About                                                                      */
+/* =========================================================================== */
+#about-us {
+  height: 1800px;
+}
+
+/* =========================================================================== */
+/*  Volunteer                                                                  */
+/* =========================================================================== */
+#volunteer p {
+  margin-bottom: 50px;
+}
+
+/* =========================================================================== */
+/*  Donate                                                                     */
+/* =========================================================================== */
+#donate {
+  height: 400px;
+}
+
+#donate p {
+  margin-bottom: 50px;
+}
+
+/* =========================================================================== */
+/*  Form                                                                       */
+/* =========================================================================== */
+#form {
+  height: 300px;
+}
+
+.span-one-of-three {
+  float: left;
+  text-align: right;
+  width: 25%;
+  margin-right: 5%;
+}
+
+.span-two-of-three {
+  float: right;
+  width: 60%;
+  margin-right: 10%;
+}
+
+input[type=number],
+select,
+textarea {
+  width: 500px;
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  font-size: 80%;
+
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+}
+
+select {
+  width: 523px;
+
+  color: #777777;
+}
+
+textarea {
+  width: 500px;
+  height: 100px;
+
+  font-family: 'Lato';
+}
+
+#age-label {
+  padding-top: 5px;
+}
+
+#language-label {
+  padding-top: 20px;
+}
+
+input[type="submit"]:not(hover) {
+  float: right;
+  margin-right: 100px;
+  font-size: 125%;
+  padding: 8px 60px;
+
+  color: #ffffff;
+  border-radius: 200px;
+  background-color: #6c6c6c;
+  border: 1px solid #6c6c6c;
+  transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: #028bde;
+  transition: background-color 0.2s;
+}
+
+/* =========================================================================== */
+/*  Education                                                                  */
+/* =========================================================================== */
+#education {
+  height: 2000px;
+}
+
+#education li {
+  margin-bottom: 50px;
+  list-style: none;
+  text-align: left;
+}
+
+#education p {
+  margin-bottom: 50px;
+}
+
+#education .non-btn {
+  color: #000000;
+}
+/* =========================================================================== */
+/*  Footer                                                                     */
+/* =========================================================================== */
+footer {
+  height: 200px;
+
+  color: #ffffff;
+}
+
+#copyright {
+  padding-top: 100px;
+  margin-bottom: 20px;
+  padding-left: 700px;
+}
+
+#footer-links {
+  float: left;
+}
+
+.footer-info {
+  font-size: 70%;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+/* =========================================================================== */
+/* HTML                                                                        */
+/* =========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: #777777;
+  font-size: 20px;
+  font-weight: 300;
+  overflow-x: hidden;
+  background-color: #000000;
+  text-rendering: optimizeLegibility;
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+/* =========================================================================== */
+/* Reusable                                                                    */
+/* =========================================================================== */
+
+h1,
+h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 300%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 200%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+
+  text-align: center;
+  color: #2d2d2d;
+}
+
+h2:after {
+  height: 3px;
+  width: 100px;
+  margin: 30px auto 60px auto;
+
+  content: " ";
+  display: block;
+  background-color: #028bde;
+}
+
+section {
+  width: 80%;
+  padding: 100px 10%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+p {
+  font-size: 24px;
+}
+
+ion-icon {
+  font-size: 300%;
+  color: #028bde;
+}
+
+.block {
+  margin-bottom: 200px;
+}
+
+/* =========================================================================== */
+/* Buttons                                                                     */
+/* =========================================================================== */
+.btn {
+  font-weight: 300;
+  padding: 10px 40px;
+  border-radius: 200px;
+
+  text-decoration: none;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  margin-right: 15px;
+  color: #ffffff;
+  background-color: #6c6c6c;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-full:hover,
+.btn-full:active {
+  color: #ffffff;
+  background-color: #028bde;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-empty:link,
+.btn-empty:visited {
+  color: #ffffff;
+  border: 1px solid #6c6c6c;
+  background-color: transparent;
+  transition: color 0.2s, border 0.2s, background-color 0.2s;
+}
+
+.btn-empty:hover,
+.btn-empty:active {
+  color: #ffffff;
+  border: 1px solid #028bde;
+  background-color: #028bde;
+  transition: color 0.2s, border 0.2s, background-color 0.2s;
+}
+/* =========================================================================== */
+/* Links                                                                       */
+/* =========================================================================== */
+.non-btn:link,
+.non-btn:visited {
+  padding: 8px 0px;
+
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.non-btn:hover,
+.non-btn:active {
+  border-bottom: 2px solid #028bde;
+  transition: border-bottom 0.2s;
+}
+
+/* =========================================================================== */
+/* Header                                                                      */
+/* =========================================================================== */
+
+#main-page {
+  height: 100vh;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/backgrounds/main-background.jpg");
+}
+
+#not-main-page {
+  height: 10vh;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-image: url("../images/backgrounds/Background.jpg");
+}
