@@ -14,7 +14,7 @@
       <p id="middle">
         <span v-if="mydata.calls>1">You've made {{mydata.calls}} lives better!</span>
         <span v-if="mydata.calls==1">You've made a life better!</span>
-        <span v-if="mydata.calls==0">Let's make someones day better.</span>
+        <span v-if="mydata.calls==0">Let's make someones life better.</span>
       </p>
       <div id="switch">
         <label class="switch">
@@ -31,12 +31,8 @@
       </div>
       <p id="quote" v-if="!ready">Make someone's day.</p>
       <h2>Comments</h2>
-      <p>"Wow... {{mydata.firstName}} really helped me overcome my social anxiety. Thank you!"</p>
+      <!-- <p>"Wow... {{mydata.firstName}} really helped me overcome my social anxiety. Thank you!"</p> -->
       <br><br><br>
-      <h2>Resources</h2>
-      <ul>
-        <li><a href="https://www.nimh.nih.gov/index.shtml"></a></li>
-      </ul>
     </section>
 
     <footerlinks/>
