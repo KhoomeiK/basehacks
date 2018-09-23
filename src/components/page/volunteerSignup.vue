@@ -74,7 +74,17 @@ export default {
                   .set({
                     verified: false,
                     age: this.age,
-                    language: this.language
+                    language: this.language,
+                    email: firebase.auth().currentUser.email,
+                    points: 0,
+                    calls: 0,
+                    firstName: firebase
+                      .auth()
+                      .currentUser.displayName.split(" ")[0],
+                    lastName: firebase
+                      .auth()
+                      .currentUser.displayName.split(" ")[1],
+                    ready: false
                   })
                   .then(() => {
                     this.$router.push({ name: "tutorial" });
