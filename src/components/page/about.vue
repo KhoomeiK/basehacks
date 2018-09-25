@@ -27,7 +27,11 @@
       <div class="block">
         <ion-icon name="people"></ion-icon>
         <h2>By Teens, For Teens</h2>
-        <p>We're a team of high schoolers working to connect teens with other<br> teens to improve mental health experiences.</p>
+        <p>We're a team of high schoolers working to connect teens with other<br> teens to improve mental health experiences.</p> <br>
+        <p> Lesha: Frontend Development & UI/UX </p>
+        <p> Rohan: Full Stack Development </p>
+        <p> Elliot: Web Design </p>
+        <p> Evan: Research & Testing </p>
       </div>
     </section>
     <footerlinks/>

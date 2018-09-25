@@ -73,12 +73,19 @@ export default {
         .then(vols => {
           console.log(this.lang, this.age);
           console.log(vols);
-          let id = vols.docs[0].id;
-          console.log(this.id);
-          this.$router.push({
-            name: "theCall",
-            params: { id }
-          });
+          if (vols.docs[0] == null) {
+            alert(
+              "No volunteers are currently available to help you out. Please call 1-800-273-8255! :)"
+            );
+          }
+          else {
+            let id = vols.docs[0].id;
+            console.log(this.id);
+            this.$router.push({
+              name: "theCall",
+              params: { id }
+            });
+          }
         });
     }
   },
