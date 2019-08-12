@@ -3,4 +3,7 @@ We & You is a web platform that effectively crowdsources mental health services 
 Visit us at https://weandyou.org
 
 TODO:
-- 
+- video networking issue—we can see ourselves but not the other person on safari (front end issue)
+- sign in doesnt work on safari 
+- getting requests from users on volunteer page 
+- camera needs to be centered higher for the person who joins the call
